@@ -44,7 +44,14 @@ class _MyAppState extends State<MyApp> {
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
               title: Text(stations[index]['name']),
-              subtitle: Text(stations[index]['city']),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Code: ${stations[index]['code']}'),
+                  Text('City: ${stations[index]['city']}'),
+                  Text('City Name: ${stations[index]['cityname']}'),
+                ],
+              ),
             );
           },
         ),
